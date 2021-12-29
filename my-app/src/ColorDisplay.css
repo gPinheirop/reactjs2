@@ -1,0 +1,10 @@
+.colorDisplay{
+    width: 300px;
+    height: 300px;
+    box-shadow: 2px 2px 2px black;
+    margin:  10px auto;
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: cadetblue;
+}

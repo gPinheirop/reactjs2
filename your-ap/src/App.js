@@ -10,7 +10,9 @@ import Footer from './Footer';
 function App() {
 
   const[items, setItems] = useState(JSON.parse(localStorage.getItem('shoppingList')));
+
   const [newItem, setNewItem] = useState('')
+  
   const [search, setSearch] = useState('')
 
   const setAndSaveitems = ( newItems )=>{
