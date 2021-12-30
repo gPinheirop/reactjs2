@@ -8,7 +8,9 @@ function App() {
 
   return (
     <div className="App">
-      <ColorDisplay colorValue={colorValue}/>
+      <ColorDisplay
+       colorValue={colorValue}
+      />
       <ColorInputBar 
         colorValue={colorValue}
         setColorValue={setColorValue}
