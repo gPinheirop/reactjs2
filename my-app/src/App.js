@@ -1,31 +1,17 @@
 import { useState } from 'react';
-
-import './App.css';
-import ColorDiaplay from './ColorDiaplay';
+import ColorDisplay from './ColorDisplay';
 import ColorInputBar from './ColorInputBar';
 
 function App() {
 
-const [newColor, setNewColor] = useState('');
-
-// const [color, setColor] = useState('');
-
-const handleSubmit = (e) =>{
-  e.preventDefault();
-  if (!newColor) return;
-  // changeColor(newColor)
-  setNewColor('');
-
-}
+  const[colorValue, setColorValue] = useState('')
 
   return (
     <div className="App">
-      <h1>teste</h1>
-      <ColorDiaplay/>
+      <ColorDisplay colorValue={colorValue}/>
       <ColorInputBar 
-        newColor = { newColor }
-        setNewColor = { setNewColor }
-        handleSubmit = { handleSubmit }
+        colorValue={colorValue}
+        setColorValue={setColorValue}
       />
     </div>
   );

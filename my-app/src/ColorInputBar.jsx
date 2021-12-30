@@ -1,19 +1,15 @@
-import './ColorInputBar.css'
-
-const ColorInputBar = ( { newColor, setNewColor, handleSubmit } ) => {
+const ColorInputBar = ({ colorValue, setColorValue }) => {
     return (
-        <form className='inputBar'>
-           
-            <input 
-                type={ "text" }
+        <form onSubmit={(e) => e.preventDefault()}>
+            <label>Add Color Name:</label>
+            <input
+                type="text" 
                 autoFocus
-                id='addColor'
-                placeholder='Add a color name'
+                placeholder="Add Color Name:"
                 required
-                value={newColor}
-                onChange={(e) => setNewColor(e.target.value)}
+                value={colorValue}
+                onChange={(e) => setColorValue(e.target.value)}
             />
-
         </form>
     )
 }
