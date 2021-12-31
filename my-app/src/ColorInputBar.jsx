@@ -1,4 +1,7 @@
-const ColorInputBar = ({ colorValue, setColorValue }) => {
+import colorNames from "colornames";
+
+const ColorInputBar = ({
+    colorValue, setColorValue, setHexValue, isDarkText, setIsDarkText }) => {
     return (
         <form  onSubmit={(e) => e.preventDefault()}>
             <label>Add Color Name:</label>
@@ -8,8 +11,17 @@ const ColorInputBar = ({ colorValue, setColorValue }) => {
                 placeholder="Add Color Name:"
                 required
                 value={colorValue}
-                onChange={(e) => setColorValue(e.target.value)}
+                onChange={(e) => {
+                    setColorValue(e.target.value);
+                    setHexValue(colorNames(e.target.value));
+                }}
             />
+            <button
+                type="button"
+                onClick={() => setIsDarkText(!isDarkText)}
+            >
+                Toggle Text Color
+            </button>
         </form>
     )
 }
